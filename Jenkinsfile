@@ -1,7 +1,7 @@
 pipeline {
     agent any
     
-    properties([parameters([string(defaultValue: 'defaultValue1', name: 'param1')])])
+    options([parameters([string(defaultValue: 'defaultValue1', name: 'param1')])])
     
     stages {
         stage('Hello') {
