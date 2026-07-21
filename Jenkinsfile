@@ -1,12 +1,14 @@
 pipeline {
     agent any
-    
-    options([parameters([string(defaultValue: 'defaultValue1', name: 'param1')])])
-    
+
+    parameters {
+        string(name: 'param1', defaultValue: 'defaultValue1', description: 'Parameter 1')
+    }
+
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                echo "Hello ${params.param1}"
             }
         }
     }
