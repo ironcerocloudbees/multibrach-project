@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    triggers { cron('H */4 * * 1-5') }
+    
+    properties([parameters([string(defaultValue: 'defaultValue1', name: 'param1')])])
+    
     stages {
         stage('Hello') {
             steps {
